@@ -4,6 +4,11 @@ This repo will cover the Spinde control issue from RotarySP on youtube [https://
 
 I made some assumptions that I mention in `calculations.ipynb`.
 
+In the video Mark mentioned that he think the biggest issue is the changing inertia of the system when changing the CVT ratio.
+
+That is true, but in my experience VFD's are quite good at speed control, and since we output a speed setpoint to the VFD I think the main issue is that the gear/ratio changes and that the scaling between VFD setpoint and spindle rpm changes too much.
+
+Secondly I think the rate-limit (ramping) done in the VFD also plays a role and needs to be included in the closed loop control in LinuxCNC. Some kind of anti-windup is needed.
 
 ## Model
 
