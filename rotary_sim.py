@@ -72,8 +72,8 @@ class RotarySpindleSim:
         self.vfd_n_act = [0.0]
 
         self.cvt_cmd = []
+        self.p_cf =[0.0]
         self.p_c =[0.0]
-        self.v_c =[0.0]
         self.k_c = []
 
         self.k_tot = []
@@ -95,7 +95,7 @@ class RotarySpindleSim:
             if self.dt*i > 0.5:
                 setpoint = 2000
 
-            k_cvt = self.a_0 + self.a_2*self.p_c[-1]**2
+            k_cvt = self.a_0 + self.a_2*self.p_cf[-1]**2
 
             # Total gain (VFD RPM -> SP RPM)
             k_tot = self.k_gearbox[-1]*k_cvt
@@ -104,8 +104,8 @@ class RotarySpindleSim:
             sp_act = self.vfd_n_act[-1]*k_tot
 
             # Controller
-            cvt_at_max = self.p_c[-1] >= 1 - self.p_c_tol
-            cvt_at_min = self.p_c[-1] <= self.p_c_tol
+            cvt_at_max = self.p_cf[-1] >= 1 - self.p_c_tol
+            cvt_at_min = self.p_cf[-1] <= self.p_c_tol
 
             vfd_at_speed = abs(ctrl.vfd_setpoint_hz - self.vfd_f_act[-1]) < 0.001
 
@@ -135,11 +135,12 @@ class RotarySpindleSim:
                 u_c = -1.0 
 
             # Velocity of p_c
-            v_c_plus = self.v_c[-1] + (self.v_c_max*u_c - self.v_c[-1])/self.conf.cvt_speed_tau_s * self.dt
-            p_c_plus = self.p_c[-1] + self.v_c[-1] * self.dt
-
+            p_c_plus = self.p_c[-1] + self.v_c_max*u_c* self.dt 
             p_c_plus = np.clip(p_c_plus,0.0,1.0)
-            
+
+            p_cf_plus = self.p_cf[-1] + (p_c_plus - self.p_cf[-1])/self.conf.cvt_speed_tau_s * self.dt
+
+
             # Fixed gearbox
             k_gearbox_plus = 1.0
             if ctrl.gearbox_backgear_active:
@@ -158,8 +159,8 @@ class RotarySpindleSim:
                 self.vfd_f_act.append(f_plus)
                 self.vfd_n_act.append(n_plus)
 
+                self.p_cf.append(p_cf_plus)
                 self.p_c.append(p_c_plus)
-                self.v_c.append(v_c_plus)
                 self.k_gearbox.append(k_gearbox_plus)
 
 
@@ -191,7 +192,7 @@ class RotarySpindleSim:
 
         plt.figure()
         plt.subplot(2,1,1)
-        plt.plot(self.t, self.p_c, label='CVT position p_c')
+        plt.plot(self.t, self.p_cf, label='CVT position p_c')
         #plt.plot(self.t, self.v_c, label='CVT velocity v_c')
         plt.plot(self.t, self.k_c, label='CVT ratio k_c')
         plt.xlabel('Time [s]')
