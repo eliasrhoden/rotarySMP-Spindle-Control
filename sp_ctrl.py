@@ -170,17 +170,22 @@ def main():
     sim.plot_results(prefix='CL_',save_figs=True)
 
     plt.figure()
-    plt.plot(sim.t,ctrl.sp_setpoint_logs,'k--')
-    plt.plot(sim.t,sim.sp_act)
+    plt.plot(sim.t,ctrl.sp_setpoint_logs,'k--',label='Setpoint')
+    plt.plot(sim.t,sim.sp_act,label='Actual')
+    plt.ylabel('Spindle RPM')
+    plt.xlabel('Time [s]')
+    plt.legend()
+    plt.grid(True)
     plt.savefig(f'docs/CL_sp_ctrl.png')
+
 
 
     plt.figure()
 
     plt.plot(sim.t,ctrl.step_log)
     plt.title("ctrl-step")
-    plt.ylabel('Spindle RPM')
-    plt.xlabel('Time [s]')
+
+    plt.grid(True)
 
 
     plt.figure()
@@ -188,6 +193,8 @@ def main():
     plt.plot(sim.t,ctrl.ratio_logs)
     plt.plot(sim.t,ctrl.ratio_setp_logs,'k--')
     plt.xlabel('Time [s]')
+    plt.ylabel("$k_c$")
+    plt.grid(True)
 
     plt.title("Ratio estimate")
 
