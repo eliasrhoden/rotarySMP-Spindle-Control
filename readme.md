@@ -7,8 +7,13 @@ I made some assumptions that I mention in `calculations.ipynb`.
 
 ## Model
 
+General signal flow
 ![](docs/drawio/diagram-BlockDiagram1.drawio.png)
+
+More detailed
 ![](docs/drawio/diagram-BlockDiagram2.drawio.png)
+
+Even more detailed
 ![](docs/drawio/diagram-BlockDiagram3.drawio.png)
 
 ## Open loop simulation
