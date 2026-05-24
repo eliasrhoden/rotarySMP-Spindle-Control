@@ -4,6 +4,13 @@ This repo will cover the Spinde control issue from RotarySP on youtube [https://
 
 I made some assumptions that I mention in `calculations.ipynb`.
 
+
+## Model
+
+![](docs/drawio/diagram-BlockDiagram1.drawio.png)
+![](docs/drawio/diagram-BlockDiagram2.drawio.png)
+![](docs/drawio/diagram-BlockDiagram3.drawio.png)
+
 ## Open loop simulation
 
 I would say the next step is to know the actual ramp time (rate limit) of the VFD and the nonlinear behaviour between CVT position $p_c$ and CVT gain $k_c$.
@@ -15,8 +22,6 @@ When the open-loop simulation is more accurate, a controller / control system ca
 ![](docs/OL_cvt.png)
 
 ![](docs/OL_mtr_spindle.png)
-
-
 
 
 ## Idea for control concept
