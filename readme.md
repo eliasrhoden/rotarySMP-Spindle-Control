@@ -1,8 +1,8 @@
 # RotarySMP Spindle control
 
-This repo will cover the Spinde control issue from RotarySP on youtube [https://www.youtube.com/watch?v=e7l_zo4woV0](https://www.youtube.com/watch?v=e7l_zo4woV0)
+This repo will cover the Spinde control issue from RotarySMP on youtube [https://www.youtube.com/watch?v=e7l_zo4woV0](https://www.youtube.com/watch?v=e7l_zo4woV0)
 
-I made some assumptions that I mention in `calculations.ipynb`.
+I've made some assumptions that I mention in `calculations.ipynb`.
 
 In the video Mark mentioned that he think the biggest issue is the changing inertia of the system when changing the CVT ratio.
 
