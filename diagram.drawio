@@ -240,7 +240,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Pa3gZpM9bd5cP8DdZZR8-36" parent="Pa3gZpM9bd5cP8DdZZR8-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Gearbox&amp;nbsp;&lt;div&gt;CMD&lt;/div&gt;" vertex="1">
-          <mxGeometry height="50" width="60" x="-100" y="167.94000000000005" as="geometry" />
+          <mxGeometry height="50" width="60" x="-100" y="180.00000000000006" as="geometry" />
         </mxCell>
         <mxCell id="Pa3gZpM9bd5cP8DdZZR8-37" edge="1" parent="Pa3gZpM9bd5cP8DdZZR8-1" source="Pa3gZpM9bd5cP8DdZZR8-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=oval;endFill=1;">
           <mxGeometry relative="1" as="geometry">
@@ -301,6 +301,17 @@
         <mxCell id="Pa3gZpM9bd5cP8DdZZR8-68" connectable="0" parent="Pa3gZpM9bd5cP8DdZZR8-67" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="f setpoint [Hz]" vertex="1">
           <mxGeometry relative="1" x="-0.1692" y="1" as="geometry">
             <mxPoint x="4" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cF5lFpsbnEK3TzP3vlZx-0" edge="1" parent="Pa3gZpM9bd5cP8DdZZR8-1" source="Pa3gZpM9bd5cP8DdZZR8-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" target="Pa3gZpM9bd5cP8DdZZR8-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cF5lFpsbnEK3TzP3vlZx-1" edge="1" parent="Pa3gZpM9bd5cP8DdZZR8-1" source="Pa3gZpM9bd5cP8DdZZR8-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" target="Pa3gZpM9bd5cP8DdZZR8-36">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-630" y="150" />
+              <mxPoint x="-70" y="150" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="Pa3gZpM9bd5cP8DdZZR8-69" parent="Pa3gZpM9bd5cP8DdZZR8-1" style="rounded=0;whiteSpace=wrap;html=1;" value="LinuxCNC" vertex="1">
