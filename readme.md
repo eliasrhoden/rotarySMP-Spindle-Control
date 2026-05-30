@@ -62,3 +62,20 @@ It does the following steps:
 Right now this need two improvements
 1. Anti windup in PI controller (to take the ramp/rate limit into account)
 2. Gain scheduling of PI (might not be nesssary if the ideal f is good) -> we can have a slower controller
+
+## Idea 2
+
+Estimate the *ideal ramp*, and adjust CVT position based on that. When the VFD has reached target freq, freeze CVT position and regulate rpm using the VFD.
+
+```
+... More to be added...
+```
+
+
+Starting with $p_c = 0.0$ 
+![](docs/CL21_cvt.png)
+![](docs/CL21_speed_estimate.png)
+
+Starting with $p_c = 1.0$ 
+![](docs/CL22_cvt.png)
+![](docs/CL22_speed_estimate.png)
