@@ -83,11 +83,14 @@ class RotarySpindleSim:
         self.k_gearbox = [1.0]
 
 
-    def sim(self, ctrl:Controller):
-
+    def reset_sim(self):
         self._init_vars()
 
+    def sim(self, ctrl:Controller):
+
         N = int(self.Tf // self.dt)
+
+        self.p_cf[0] = self.p_c[0]
 
         for i in range(N):
             
@@ -289,7 +292,7 @@ def main():
     conf = get_default_sim_conf()
     
     sim = RotarySpindleSim(conf,0.01,55)
-
+    sim.p_c[0] = 1.0
     ctrl = Basic()
 
     sim.sim(ctrl)
