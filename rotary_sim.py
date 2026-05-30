@@ -292,12 +292,12 @@ def main():
     conf = get_default_sim_conf()
     
     sim = RotarySpindleSim(conf,0.01,55)
-    sim.p_c[0] = 1.0
+
     ctrl = Basic()
 
     sim.sim(ctrl)
 
-    sim.plot_results(prefix='OL_',save_figs=True)
+    sim.plot_results(prefix='OL_',save_figs=False)
 
     plt.show()
 
