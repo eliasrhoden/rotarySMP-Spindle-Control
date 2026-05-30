@@ -71,11 +71,15 @@ Estimate the *ideal ramp*, and adjust CVT position based on that. When the VFD h
 ... More to be added...
 ```
 
-
 Starting with $p_c = 0.0$ 
+
+
 ![](docs/CL21_cvt.png)
 ![](docs/CL21_speed_estimate.png)
 
-Starting with $p_c = 1.0$ 
+
+Starting with $p_c = 1.0$ W
+
+
 ![](docs/CL22_cvt.png)
 ![](docs/CL22_speed_estimate.png)
